@@ -1,5 +1,4 @@
 import { App } from "./Infra/Http/App.ts";
-import { bootstrap } from "inject";
 
-const app = bootstrap(App);
+const app = App.NewInstance();
 app.start(8000);

@@ -1,9 +1,7 @@
 import { Application, Router, Context } from "oak";
 import { IController } from "./IController.ts";
-import { Injectable } from "inject";
 
-@Injectable()
-export class OrderController {
+export class OrderController implements IController {
   private router: Router;
 
   constructor() {
@@ -37,6 +35,7 @@ export class OrderController {
   };
 
   private initializeRoutes(): void {
+    this.router.get("/", this.handleGetOrders);
     this.router.get("/orders", this.handleGetOrders);
     this.router.post("/orders", this.handleCreateOrder);
     this.router.put("/orders/:id", this.handleUpdateOrder);

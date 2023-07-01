@@ -1,4 +1,4 @@
-POST http://localhost:8000/orders HTTP/1.1
+POST https://wilsonneto-dev-potential-trout-5gwx5449wg634499-8000.preview.app.github.dev/orders HTTP/1.1
 content-type: application/json
 
 { }
